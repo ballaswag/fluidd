@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.28.2-swag](https://github.com/fluidd-core/fluidd/compare/v1.28.1...v1.28.2-swag) (2024-03-15)
+
+
+### Features
+
+* path base moonraker websocket endpoint. ([d608ab5](https://github.com/ballaswag/fluidd/commit/d608ab5a8e66db94f392a720ef52403e9c8eb785))
+
 ## [1.28.1](https://github.com/fluidd-core/fluidd/compare/v1.28.0...v1.28.1) (2024-02-18)
 
 
