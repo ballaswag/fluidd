@@ -33,19 +33,6 @@ const getHostConfig = async () => {
 }
 
 const getApiConfig = async (hostConfig: HostConfig): Promise<ApiConfig | InstanceConfig> => {
-  // Local storage load
-  if (Globals.LOCAL_INSTANCES_STORAGE_KEY in localStorage) {
-    const instances = JSON.parse(localStorage[Globals.LOCAL_INSTANCES_STORAGE_KEY]) as InstanceConfig[]
-    if (instances && instances.length) {
-      for (const config of instances) {
-        if (config.active) {
-          consola.debug('API Config from Local Storage', config)
-          return config
-        }
-      }
-    }
-  }
-
   // If local storage not set, then ping the browser url.
   const endpoints: string[] = []
   const blacklist: string[] = []
@@ -66,12 +53,9 @@ const getApiConfig = async (hostConfig: HostConfig): Promise<ApiConfig | Instanc
   // Add the browsers url to our endpoints list, unless black listed.
   if (blacklist.findIndex(s => s.includes(document.location.hostname)) === -1) {
     // Add the browser url.
-    endpoints.push(`${document.location.protocol}//${document.location.host}`)
+    endpoints.push(`${document.location.protocol}//${document.location.host}${document.location.pathname}`)
 
-    // Add the moonraker endpoints...
-    const port = document.location.protocol === 'https:' ? '7130' : '7125'
-
-    endpoints.push(`${document.location.protocol}//${document.location.hostname}:${port}`)
+    endpoints.push(`${document.location.protocol}//${document.location.hostname}${document.location.pathname}`)
   }
 
   const abortController = new AbortController()
