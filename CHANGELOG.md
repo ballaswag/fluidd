@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.28.3-swag](https://github.com/fluidd-core/fluidd/compare/v1.28.2...v1.28.3-swag) (2024-04-05)
+
+
+### Features
+
+* path base routing for mjpeg-streamer.
+
 ## [1.28.2-swag](https://github.com/fluidd-core/fluidd/compare/v1.28.1...v1.28.2-swag) (2024-03-15)
 
 
